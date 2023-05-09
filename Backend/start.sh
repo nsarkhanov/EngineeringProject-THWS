@@ -1,17 +1,16 @@
 #!/bin/bash
 
 # Define the virtual environment directory
-app_DIR="/home/nurlan/Desktop/Vit_Tracker/Backend"
-
-
+# app_DIR="/home/nurlan/Desktop/Vit_Tracker/Backend"
+#!/bin/bash
+CURRENT_DIR="$PWD"
 # Define the command to run in each terminal
 COMMAND1="sudo mongod --dbpath /data/rs1 --replSet rs0 --port 27018"
 COMMAND2="sudo mongod --dbpath /data/rs2 --replSet rs0 --port 27019"
 COMMAND3="sudo mongod --dbpath /data/rs3 --replSet rs0 --port 27020"
 COMMAND4="node  /home/nurlan/Desktop/Vit_Tracker/Backend/REST_API/server.js"
-COMMAND5="sudo mongo --port 27018"
-COMMAND6="source ${app_DIR}/venv/bin/activate && python ${app_DIR}/Backend_QUI/main.py"
-
+COMMAND5="source ${CURRENT_DIR}/venv/bin/activate && python ${CURRENT_DIR}/Backend_QUI/muse_connector.py"
+COMMAND6="source ${CURRENT_DIR}/venv/bin/activate && sleep 5 && python ${CURRENT_DIR}/Backend_QUI/main.py"
 # Define the number of terminals to open
 NUM_TERMINALS=7
 

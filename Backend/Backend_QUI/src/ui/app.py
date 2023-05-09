@@ -7,7 +7,7 @@ Date: April 22, 2023
 import tkinter as tk
 from tkinter import ttk
 import threading
-from src.utilities.utility import serial_connection,command_sender,sender,sender_batch
+from src.utilities.utility import *
 from src.utilities.constants import *
 #create serial connection with esps
 ser=serial_connection(port_name=SERIAL_PORT,baudrate=BAUD_RATE)
@@ -22,6 +22,7 @@ def data_sender():
         sensor_data = ser.readline().decode()
         if mode_status=="real-time":
             sender(data=sensor_data, userID=userID)
+            eeg_sender(userID=userID)
         elif mode_status=="batch":
             finished=sender_batch(data=sensor_data, userID=userID)
             if finished:

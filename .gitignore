@@ -1,6 +1,8 @@
 # Ignore node_modules in backend and frontend
 **/node_modules/
 # Ignore Python compiled files
+**/.angular/
+**/.vscode/
 Backend/**/*.pyc
 Backend/venv/
 Backend/**/__pycache__/
