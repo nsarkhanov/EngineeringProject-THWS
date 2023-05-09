@@ -20,7 +20,7 @@ def skin_rate_reader(data, userID):
 def imu_sensor_reader(data,userID):
     sensorID=data[0]
     date=datetime.now()
-    if len(data) >= 18:
+    if len(data) >= 19:
         acceleration= [data[1],data[7],data[13]]
         orientation = [data[2],data[8],data[14]]
         gyro=         [data[3],data[9],data[15]]
@@ -61,6 +61,7 @@ def brain_sensor_reader(data,userID):
                   "AF8":AF8,"TP10":TP10,"RightAUX":RightAUX,"date":datetime.fromtimestamp(data[1])}
         return brain_sensor
     else:
+        
         print("Data is not getting correctly yet.")
 
 
