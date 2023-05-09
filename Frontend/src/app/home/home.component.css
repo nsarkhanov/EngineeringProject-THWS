@@ -1,0 +1,21 @@
+table {
+  width: 100%;
+}
+
+h2 {
+  text-align: center; 
+}
+
+img {
+  width: 15%;
+  padding-left: 80%;
+}
+h1 {
+  text-align:center;
+  padding: 2px;
+}
+
+mat-form-field {
+  width: 50%;
+  padding: 5%;
+}

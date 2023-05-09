@@ -1,0 +1,25 @@
+<header class="header-user-dropdown">
+  <div class="header-limiter">
+    <h1>
+      <a href="#">Vital<span>Tracker</span></a>
+    </h1>
+
+    <nav>
+      <a [routerLink]="['/vital-tracker', 'Sensors']" routerLinkActive="active">Sensors</a>
+      <a [routerLink]="['/vital-tracker', 'LiveReport']" routerLinkActive="active">Live Report</a>
+      <a [routerLink]="['/vital-tracker', 'HistoricalReport']" routerLinkActive="active">Historical Reports</a>
+      <!-- <a href="#">Evaluation</a> -->
+      <!-- <a href="#">Roles <span class="header-new-feature">new</span></a> -->
+    </nav>
+
+    <div class="header-user-menu">
+      <img src="../../../assets/images/2.jpg" alt="User Image" />
+
+      <!-- <ul>
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">Payments</a></li>
+        <li><a href="#" class="highlight">Logout</a></li>
+      </ul> -->
+    </div>
+  </div>
+</header>

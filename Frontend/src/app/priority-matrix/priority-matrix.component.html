@@ -1,0 +1,35 @@
+
+<h2>Relationship Matrix - {{project}}</h2>
+
+<br>
+<br>
+
+<table border>
+    <thead>
+       <td></td> 
+        <td *ngFor="let element of this.data">
+            
+            <ng-container> {{element.description}}
+            </ng-container>
+        </td>
+    </thead>
+    <tbody>
+        <tr *ngFor="let element of this.data">
+            <td>{{element.description}}</td>
+            
+            <td *ngFor="let element1 of this.data">
+                <ng-container> 
+                    <div *ngIf="element.description==element1.description">-</div>
+
+                    <div *ngFor="let connect of element1.connections"> 
+                        
+                        <div *ngIf="element.description===connect" id ="tzu">1</div>
+                    </div>
+                    
+                </ng-container>
+            </td>
+        </tr>
+       
+    </tbody>
+</table>
+

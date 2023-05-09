@@ -1,0 +1,36 @@
+<form [formGroup]="group">
+  <mat-form-field>
+    <mat-label>Select start date and time</mat-label>
+    <mat-datetimepicker-toggle
+      [for]="datetimePicker"
+      matSuffix
+    ></mat-datetimepicker-toggle>
+    <mat-datetimepicker
+      #datetimePicker
+      type="datetime"
+      [openOnFocus]="true"
+      [timeInterval]="1"
+      mode="portrait"
+    ></mat-datetimepicker>
+    <input
+      matInput
+      formControlName="datetimeCtrl"
+      [matDatetimepicker]="datetimePicker"
+      required
+      [min]="data.min"
+      [max]="data.max"
+      time="true"
+      minutes="true"
+      seconds="true"
+      autocomplete="true"
+      auto-ok="true"
+      format="HH:mm:ss"
+      (keyup.enter)="onOk()"
+      (keydown.enter)="onOk()"
+    />
+  </mat-form-field>
+  <mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Cancel</button>
+    <button mat-button #okButton (click)="onOk()">Ok</button>
+  </mat-dialog-actions>
+</form>

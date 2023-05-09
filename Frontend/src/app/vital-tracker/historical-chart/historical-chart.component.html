@@ -1,0 +1,12 @@
+<app-header> </app-header>
+<div class="container">
+  
+  <app-icons> [curIcon] = "{{ curIcon }}" </app-icons>
+  <div class = "DateTimeSelection"> 
+    <app-date-time-picker-button class = "DateTimeSelector" [start] = 0 [min] = "min" [max] = "endTime"> </app-date-time-picker-button>
+    <app-date-time-picker-button class = "DateTimeSelector" [start] = 1 [min] = "startTime" [max] = "max"> </app-date-time-picker-button>
+  </div>
+  <div class="chart-container">
+    <div class="chart" #chart></div>
+  </div>
+</div>

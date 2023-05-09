@@ -1,0 +1,51 @@
+<h2>Assigning of assembly operation - {{project}}</h2>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="number">
+      <th mat-header-cell *matHeaderCellDef> Ser. no. </th>
+      <td mat-cell *matCellDef="let element"> {{element.number}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="module">
+      <th mat-header-cell *matHeaderCellDef> Sub-assembly / Final product </th>
+      <td mat-cell *matCellDef="let element"> 
+        {{element.module}}
+      </td>
+    </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="components">
+        <th mat-header-cell *matHeaderCellDef> Components</th>
+        <td mat-cell *matCellDef="let element"> 
+          
+          <div *ngFor="let index of element.components; index as i">
+            <label for=html class="elements_padding"><em>{{element.components[i]}}</em></label><br>
+           </div>
+
+        </td>
+      </ng-container>
+  
+        <!-- Name Column -->
+        <ng-container matColumnDef="assembly_action">
+            <th mat-header-cell *matHeaderCellDef> Assembly operation </th>
+            <td mat-cell *matCellDef="let element"> <select id={{element.assembly_description}} (change)="onChange($event, element)">
+                <option value="Bitte wäheln">Please select</option>
+                <option value="Joining">Joining</option>
+                <option value="Screwing">Screwing</option>
+                <option value="Bonding">Bonding</option>
+                </select> </td>
+          </ng-container>
+
+            <!-- Name Column -->
+        <ng-container matColumnDef="assembly_description">
+          <th mat-header-cell *matHeaderCellDef> Assembly description </th>
+          <td mat-cell *matCellDef="let element"> {{element.assembly_description}} </td>
+        </ng-container>
+      
+      
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>

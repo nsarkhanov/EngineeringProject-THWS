@@ -1,0 +1,86 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+    max-width: 80%;
+    margin: 20px auto;
+    overflow: auto;
+    min-height: 600px;
+    border: 1px solid steelblue;
+    padding: 30px;
+    margin-bottom: 200px; /* adds a 20px margin below the border */
+  }
+
+
+.graph {
+  max-width: 70%;
+  margin: 50px auto;
+  overflow: auto;
+  min-height: 300px;
+  padding: 30px;
+}
+
+.bigbutton {
+  margin-right: 30px; /* Adds 10 pixels of margin to the right of the button */
+  margin-left: 30px; /* Adds 10 pixels of margin to the right of the button */
+  margin-bottom: 10px; /* Adds 10 pixels of margin to the bottom of the button */
+  min-height: 150px;
+}
+
+.bigButtons {
+  display: flex;
+  justify-content: center;
+}
+
+.curIcon {
+  width: 50px;
+  
+}
+
+.chart-container {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  width: 800px;
+}
+.btn {
+  width: 50px;
+}
+
+.border {
+  width: 50px;
+  border: 2px solid steelblue;
+}
+
+
+.btn:focus {
+  outline: none;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+
+.grid line {
+  stroke: blue;
+  stroke-opacity: 0.1;
+  shape-rendering: crispEdges;
+}

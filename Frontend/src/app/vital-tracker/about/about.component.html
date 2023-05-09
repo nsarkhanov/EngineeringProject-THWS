@@ -1,0 +1,53 @@
+<app-header> </app-header>
+<div class="container">
+  <div></div>
+  <div class="bigButtons">
+    <a
+      [routerLink]="['/vital-tracker', 'HistoricalReport']"
+    >
+      <input
+        type="image"
+        src="../../../../assets/images/muse_sensor.jpg"
+        [ngStyle]="{ 'background-color': 'red' }"
+        class="bigbutton"
+        (click)="changeDisplayGraph(1)"
+      />
+    </a>
+    <a
+      [routerLink]="['/vital-tracker', 'HistoricalReport']"
+    >
+      <input
+        type="image"
+        src="../../../../assets/images/heart_sensor.jpg"
+        [ngStyle]="{ 'background-color': 'red' }"
+        class="bigbutton"
+        (click)="changeDisplayGraph(2)"
+      />
+    </a>
+
+    <a
+      [routerLink]="['/vital-tracker', 'HistoricalReport']"
+    >
+      <input
+        type="image"
+        src="../../../../assets/images/IMU_sensor.jpg"
+        [ngStyle]="{ 'background-color': 'red' }"
+        class="bigbutton"
+        (click)="changeDisplayGraph(3)"
+      />
+    </a>
+
+    <a
+      [routerLink]="['/vital-tracker', 'HistoricalReport']"
+    >
+      <input
+        type="image"
+        src="../../../../assets/images/skin_sensor.jpg"
+        [ngStyle]="{ 'background-color': 'red' }"
+        class="bigbutton"
+        (click)="changeDisplayGraph(4)"
+      />
+    </a>
+  </div>
+</div>
+<!-- <app-footer></app-footer> -->

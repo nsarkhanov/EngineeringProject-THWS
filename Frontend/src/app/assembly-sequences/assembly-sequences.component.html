@@ -1,0 +1,28 @@
+<h1>Assembly sequence - {{project}}</h1> 
+
+<table>
+
+  <td>
+    <mat-form-field appearance="fill">
+      <mat-label>Variants</mat-label>
+      <mat-select [(value)]="selected" (selectionChange)="calculatePlanning()">
+        <mat-option value="variant_one"> Assembly Sequence Plan - Variant 1</mat-option>
+        <mat-option value="variant_two">Assembly Sequence Plan - Variant 2</mat-option>
+      </mat-select>
+    </mat-form-field> 
+  </td>
+
+  <td>
+    <div><img  class="img" src="../../assets/images/STEP_242/BT_ASM_AP242_stp.png"/></div>
+  </td>
+
+</table>
+
+
+
+
+
+
+<div id="container" #divRef  ></div>
+
+

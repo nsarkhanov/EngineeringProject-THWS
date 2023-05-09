@@ -1,0 +1,7 @@
+muselsl
+pyserial
+tk
+requests
+pylsl
+fastapi
+uvicorn

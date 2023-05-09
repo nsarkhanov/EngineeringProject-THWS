@@ -1,0 +1,69 @@
+<mat-form-field appearance="fill">
+    <mat-label>Select Assembly step</mat-label>
+    <mat-select [(value)]="selected" (selectionChange)="loadData(selected)">
+      
+      <div *ngFor="let index of data; index as i">
+        <mat-option value={{data[i]}}> {{data[i]}} </mat-option>
+      </div>
+    </mat-select>
+  </mat-form-field>
+
+<table border>
+    <thead>
+    <tr>
+        <th colspan="2"></th>
+        <th colspan="4" style="background-color:grey;">Human</th>
+        <th rowspan="3" style="background-color:grey;" class="rotate">Skill metric human</th>
+        <th colspan="4" style="background-color:grey;">Robot</th>
+        <th rowspan="3" style="background-color:grey;" class="rotate">Skill metric robot</th>
+    </tr>
+    <tr>
+        <th rowspan="2">Criteria</th>
+        <th rowspan="2">Emphasis</th>
+        <th class="rotate">time</th>
+        <th class="rotate">cost</th>
+        <th colspan="2" class="rotate">Quality</th>
+        <th class="rotate">time</th>
+        <th class="rotate">cost</th>
+        <th colspan="2" class="rotate">Quality</th>
+    </tr>
+    <tr>
+    
+     <th class="rotate">Cycle time</th>
+     <th class="rotate">Additional investment</th>
+     <th class="rotate">Process security</th>
+     <th class="rotate">Work quality</th>
+     <th class="rotate">Cycle time</th>
+     <th class="rotate">Additional investment</th>
+     <th class="rotate">Process security</th>
+     <th class="rotate">Work quality</th>
+     
+   </tr>
+   
+</thead>
+   <tbody>
+    <tr *ngFor="let criteria of ELEMENT_DATA ; 
+    even as isEven" [ngStyle]="{ background: isEven ?  '#CCC' : 'white' }">
+
+
+        <td class="small">{{criteria.description}}</td>
+        <td class="small">{{criteria.weight}}</td>
+        <td><input type="test" id="TaktzeitM" value={{criteria.TaktzeitM}}  (change)="onSearchChange($event.target, criteria.description)"></td>
+        <td><input id="ZusatzinvestM" value={{criteria.ZusatzinvestM}} (change)="onSearchChange($event.target, criteria.description)"></td>
+        <td><input id="ProzesssicherheitM" value={{criteria.ProzesssicherheitM}} (change)="onSearchChange($event.target, criteria.description)"></td>
+        <td><input id="ArbeitsqualitaetM" value={{criteria.ArbeitsqualitaetM}} (change)="onSearchChange($event.target, criteria.description)"></td>
+
+        <td><input id="{{'skillHuman' + criteria.description}}"  value={{criteria.skillHuman}} readonly="readonly"></td>
+
+        <td><input id="TaktzeitR" value={{criteria.TaktzeitR}} (change)="onSearchChange($event.target, criteria.description)"></td>
+        <td><input id="ZusatzinvestR" value={{criteria.ZusatzinvestR}} (change)="onSearchChange($event.target, criteria.description)"></td>
+        <td><input id="ProzesssicherheitR" value={{criteria.ProzesssicherheitR}} (change)="onSearchChange($event.target, criteria.description)"></td>
+        <td><input id="ArbeitsqualitaetR" value={{criteria.ArbeitsqualitaetR}} (change)="onSearchChange($event.target, criteria.description)"></td>
+
+        <td><input id="{{'skillRobot' + criteria.description}}" value={{criteria.skillRobot}} readonly="readonly"></td>
+
+
+    </tr>
+</tbody>
+</table>
+

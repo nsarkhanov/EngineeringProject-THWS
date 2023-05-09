@@ -1,0 +1,85 @@
+.outer_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .title {
+      font-size: 30px;
+      color: #ce621a;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    align-items: center; /* Vertically align child elements */
+  }
+  
+  .image-text-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .image-text-container img {
+    width: 60px;
+    margin-right: 10px;
+  }
+
+  .image-text-container span {
+    margin-right: 10px;
+  }
+  
+  .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .icon {
+    margin-right: 10px;
+  }
+
+  @media (max-width: 2000px) {
+    .icons {
+      display: block;
+    }
+  }
+
+  .DropDownContainerMUSE {
+    margin-left: 200px;
+    display: flex;
+    align-items: center;
+  }
+
+  .DropDownContainerIMU {
+    display: flex;
+    align-items: center;
+  }
+  
+  .DropDownItemIMU {
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    padding: 10px;
+    height: 75px;
+    border-color: rgb(202, 77, 32);
+  }
+  
+  .DropDownItemMUSE {
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    padding: 10px;
+    height: 75px;
+    border-color: rgb(202, 77, 32);
+    margin-right: 1px;
+  }
+  
+  /* .DropDownItem:hover {
+    background-color: #eee;
+  } */

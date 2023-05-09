@@ -1,0 +1,59 @@
+<h2>Categorization of the assembly process - {{project}}</h2>
+
+<mat-form-field appearance="fill">
+  <mat-label>Select assembly step</mat-label>
+  <mat-select [(value)]="selected" (selectionChange)="loadData($event.value)">
+    
+    <div *ngFor="let index of data; index as i">
+      <mat-option value={{data[i]}}> {{data[i]}} </mat-option>
+    </div>
+  </mat-select>
+</mat-form-field>
+  
+<button (click)="saveData()">Save entry</button>
+<button (click)="clearRadioButton()">Delete entry</button>
+
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="criteria">
+      <th mat-header-cell *matHeaderCellDef> Criteria </th>
+      <td mat-cell *matCellDef="let element"> {{element.criteria}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef> Description </th>
+      <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="weight">
+      <th mat-header-cell *matHeaderCellDef> Emphasis </th>
+      <td mat-cell *matCellDef="let element">
+       
+        <div *ngFor="let index of element.weight; index as i">
+            <label for="html">{{element.weight[i]}}</label><br>
+        </div>
+      </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="symbol">
+      <th mat-header-cell *matHeaderCellDef> Selection </th>
+      <td mat-cell *matCellDef="let element">
+
+        <div *ngFor="let index of element.weight; index as i">
+            <input type="radio" id={{element.weight[i]+element.description}} name={{element.weight[i]}} (change)="onChangeRadio($event, element.description)">
+            <label></label><br>
+        </div>
+
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  

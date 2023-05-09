@@ -1,0 +1,8 @@
+<input
+  type="image"
+  src="{{ pathToPic }}"
+  [ngStyle]="{ 'background-color': color }"
+  [ngClass]="{ border: iconId === curIcon }"
+  class="btn"
+  (click)="onClick()"
+/>

@@ -1,0 +1,79 @@
+<div class="outer_header">
+  <header class="header">
+    <div class="image-text-container">
+      <img src="{{ allImages[curIcon - 1] }}" alt="Image" />
+      <span class="title">{{ curTitle }}</span>
+    </div>
+    <div *ngIf="curIcon == 3" class="DropDownContainerIMU">
+      <app-imu-dropdown
+        class="DropDownItemIMU"
+        [elements]="[
+          'Acceleration',
+          'Orientation',
+          'Magnetic',
+          'Gyro',
+          'Linear',
+          'Gravity'
+        ]"
+        [displayText]="'Choose data'"
+        [function]="0"
+      >
+      </app-imu-dropdown>
+      <app-imu-dropdown
+        class="DropDownItemIMU"
+        [elements]="['X-Axis', 'Y-Axis', 'Z-Axis']"
+        [displayText]="'Choose axis'"
+        [function]="1"
+      >
+      </app-imu-dropdown>
+      <app-imu-dropdown
+        class="DropDownItemIMU"
+        [elements]="['Left hand', 'Right hand', 'Left foot', 'Right foot']"
+        [displayText]="'Choose Sensor'"
+        [function]="2"
+      >
+      </app-imu-dropdown>
+    </div>
+    <div *ngIf="curIcon == 1" class="DropDownContainerMUSE">
+      <app-muse-dropdown
+        class="DropDownItemMUSE"
+        [elements]="['TP9', 'AF7', 'AF8', 'TP10', 'RightAUX']"
+        [displayText]="'Choose data'"
+      >
+      </app-muse-dropdown>
+    </div>
+    <div class="icons">
+      <app-vital_button
+        class="icon"
+        pathToPic="../../../../assets/images/icon1.jpg"
+        (btnClick)="changeDisplayGraph(1)"
+        [curIcon]="curIcon"
+        [iconId]="1"
+      ></app-vital_button>
+
+      <app-vital_button
+        class="icon"
+        pathToPic="../../../../assets/images/icon2.jpg"
+        (btnClick)="changeDisplayGraph(2)"
+        [curIcon]="curIcon"
+        [iconId]="2"
+      ></app-vital_button>
+
+      <app-vital_button
+        class="icon"
+        pathToPic="../../../../assets/images/icon3.jpg"
+        (btnClick)="changeDisplayGraph(3)"
+        [curIcon]="curIcon"
+        [iconId]="3"
+      ></app-vital_button>
+
+      <app-vital_button
+        class="icon"
+        pathToPic="../../../../assets/images/skin_sensor.jpg"
+        (btnClick)="changeDisplayGraph(4)"
+        [curIcon]="curIcon"
+        [iconId]="4"
+      ></app-vital_button>
+    </div>
+  </header>
+</div>

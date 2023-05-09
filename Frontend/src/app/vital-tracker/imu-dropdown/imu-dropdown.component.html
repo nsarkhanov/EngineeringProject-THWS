@@ -1,0 +1,19 @@
+<mat-form-field class = "FormField">
+    <mat-label class = "Label">{{displayText}}</mat-label>
+    <mat-select *ngIf="function == 0" [(ngModel)]="selectedElem" multiple (selectionChange)="onSelectionChange($event)">
+      <mat-option *ngFor="let elem of elements" [value]="elem">
+        {{ elem }}
+      </mat-option>
+    </mat-select>
+    <mat-select *ngIf="function == 1" [(ngModel)]="selectedElem" multiple (selectionChange)="onSelectionChange($event)">
+      <mat-option *ngFor="let elem of elements" [value]="elem">
+        {{ elem }}
+      </mat-option>
+    </mat-select>
+    <mat-select *ngIf="function == 2" [(ngModel)]="selectedSensorID" (selectionChange)="onSelectionChange($event)">
+      <mat-option *ngFor="let elem of elements" [value]="elem">
+        {{ elem }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  

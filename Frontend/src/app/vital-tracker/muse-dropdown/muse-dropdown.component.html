@@ -1,0 +1,9 @@
+<mat-form-field class="FormField">
+    <mat-label class="Label">{{ displayText }}</mat-label>
+    <mat-select [(ngModel)]="selectedElem" multiple (selectionChange)="onSelectionChange($event)">
+      <mat-option *ngFor="let elem of elements" [value]="elem">
+        {{ elem }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  

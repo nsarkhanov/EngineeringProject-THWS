@@ -1,0 +1,198 @@
+<div class="box">
+    <div class= "col-sm-5 custom-container jumbotron">
+         
+      <form class="form-vertical">
+          <fieldset>
+            <legend><h2>Skill Overview Human</h2></legend>
+           
+              <!---  --->
+              <div class="form-group">
+                  <label for="inputName">Name</label>
+                  <input type="text"
+                    class="clear_view"
+                    id="name_human"
+                    placeholder="Name"
+                    >
+              </div>
+              <br/>
+              <div class="form-group">
+                <label for="surname">Surname</label>
+                <input type="text"
+                  class="clear_view"
+                  id="surname_human"
+                  placeholder="Surname"
+                  >
+                </div>
+                <br/>
+                  <div class="form-group">
+                    <label for="size">Height [cm]</label>
+                    <input type="text"
+                      class="clear_view"
+                      id="size_human"
+                      placeholder="Height"
+                    >
+            </div>
+              <br/>
+              <!---  --->
+              <div class="form-group">
+                <label for="arm_length">Arm length [cm]</label>
+                <input type="text"
+                  class="clear_view"
+                  id="arm_length_human"
+                  placeholder="Arm length">
+              </div>
+              <br/>
+        
+              <div class="form-group">
+                <label for="arm">Primary arm</label>
+                <select id="select_arm_human" class="clear_view">
+                    <option>right</option>
+                    <option>left</option>
+                </select>
+              </div>
+              <br/>
+        
+              <div class="form-group">
+                <label>Skills</label>
+                <section class="example-section" id="skill_human">
+                  <h4>Choose option:</h4>
+                  <p><mat-checkbox value="Holen" (change)="onChangeCheckboxHuman($event)">Bring</mat-checkbox></p>
+                  <p><mat-checkbox value="Loslassen" (change)="onChangeCheckboxHuman($event)">Release</mat-checkbox></p>
+                  <p><mat-checkbox value="Fügen" (change)="onChangeCheckboxHuman($event)">Joining</mat-checkbox></p>
+                  <p><mat-checkbox value="Hinlangen" (change)="onChangeCheckboxHuman($event)">Reach</mat-checkbox></p>
+                </section>
+                
+              </div>
+             
+
+             <!--- Buttons Block --->
+              <div class="form-group">
+                  <button type="button" class="btn btn-primary" (click)="saveDataHuman()">Save</button>
+              </div> 
+          </fieldset>
+      </form>
+    </div>
+</div>
+
+  <!--Robot description----------------------------------------------------------------------------------------------------------->
+  <p></p>
+<div class="box">
+    <div class= "col-sm-5 custom-container jumbotron">
+         
+      <form class="form-horizontal">
+          <fieldset>
+            <legend><h2>Skill Overview Robot</h2></legend>
+           
+              <!---  --->
+              <div class="form-group">
+                  <label for="description_robot">Description Robot</label>
+                  <input type="text"
+                    class="clear_view"
+                    id="description_robot"
+                    placeholder="Bezeichnung"
+                    >
+              </div>
+              <br/>
+              <div class="form-group">
+                <label for="load_capacity_robot">Payload</label>
+                <input type="text"
+                  class="clear_view"
+                  id="load_capacity_robot"
+                  placeholder="Traglast"
+                  >
+            </div>
+              <br/>
+              <!---  Reichweit--->
+              <div class="form-group">
+                <label for="scope">Reach [cm]</label>
+                <input type="text"
+                  class="clear_view"
+                  id="scope_robot"
+                  placeholder="Reach">
+              </div>
+              <br/>
+
+              <div class="form-group">
+                <label for="speed">Speed</label>
+                <input type="text"
+                class="clear_view"
+                id="speed_robot"
+                placeholder="Speed">
+              </div>
+              <br/>
+
+              <div class="form-group">
+                <label for="acceleration">Acceleration</label>
+                <input type="text"
+                class="clear_view"
+                id="acceleration_robot"
+                placeholder="Acceleration">
+              </div>
+              <br/>
+        
+              <div class="form-group">
+                <label for="cripper">Gripper</label>
+                <select id="select_gripper_robot" class="clear_view">
+                    <option>Robotiq 2f-140</option>
+                    <option>Robotiq Hand-E</option>
+                </select>
+              </div>
+              <br/>
+
+            
+        
+              <div class="form-group">
+                <label>Skills</label>
+                <section class="example-section" id="select_skill_robot">
+                  <h4>Choose options:</h4>
+                  <p><mat-checkbox value="Holen" (change)="onChangeCheckboxRobot($event)">Bring</mat-checkbox></p>
+                  <p><mat-checkbox value="Loslassen" (change)="onChangeCheckboxRobot($event)">Release</mat-checkbox></p>
+                  <p><mat-checkbox value="Fügen" (change)="onChangeCheckboxRobot($event)">Joining</mat-checkbox></p>
+                  <p><mat-checkbox value="Hinlangen" (change)="onChangeCheckboxRobot($event)">Reach</mat-checkbox></p> <!--Hinlangen-->
+                </section>
+                
+              </div>
+             
+
+             <!--- Buttons Block --->
+              <div class="form-group">
+                  <button type="button" class="btn btn-primary" (click)="saveDataRobot()">Save</button>
+              </div>
+          </fieldset>
+      </form>
+    </div>
+</div>
+
+<div class="box">
+  
+  <mat-list>
+    <h2>Database human</h2>
+    <mat-list-item *ngFor="let message of mongo_human_data">
+     <br><br><br>
+      <details>
+        <summary>{{message.name}} {{message.surname}}</summary>
+          <p>Primary arm: {{message.priority_arm}}
+            <br>skills: {{message.skills}}
+          </p>
+      </details>
+      <br>
+    </mat-list-item>
+  </mat-list>
+
+</div>
+
+<div class="box">
+  
+  <mat-list>
+    <h2>Database robot</h2>
+    <mat-list-item *ngFor="let message of mongo_robot_data">
+      <details>
+        <summary>{{message.description}}</summary>
+          <p>Gripper: {{message.gripper}}</p>
+      </details>
+    </mat-list-item>
+  </mat-list>
+
+</div>
+
+
